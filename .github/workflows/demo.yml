@@ -28,6 +28,7 @@ jobs:
             cd BudgetBuddy/
             ls -la
             source ~/.bashrc
+            export PATH="$HOME/.bun/bin:$PATH"
             bun --version
             bun install
             bun run build
