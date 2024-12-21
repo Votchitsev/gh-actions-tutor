@@ -1,8 +1,19 @@
 name: Git Hub Actions Demo
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+on: 
+  push: 
+    branches:
+      - main
 jobs:
-  Hello:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello GitHub Actions"
+      - name: pull from repo
+        uses: appleboy/ssh-action@1.2.0
+        with: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SECRET_KEY }}
+          script: |
+            ls -la
+      
