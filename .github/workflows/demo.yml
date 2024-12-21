@@ -27,6 +27,7 @@ jobs:
           script: |
             cd BudgetBuddy/
             ls -la
+            echo "$PATH"
             bun --version
             bun install
             bun run build
