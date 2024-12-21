@@ -26,6 +26,7 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
             cd BudgetBuddy/
+            bun --version
             bun install
             bun run build
       - name: move build files
